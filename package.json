@@ -1,7 +1,7 @@
 {
-  "name": "angular-quickstart",
-  "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "name": "preybird-hospitality",
+  "version": "0.0.1",
+  "description": "An app with hospitality",
   "scripts": {
     "build:ts": "tsc -p src/",
     "build:css": "node-sass src/ -o src/",
@@ -25,8 +25,8 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "author": "Per Jonsson",
+  "license": "",
   "dependencies": {
     "@angular/common": "~4.0.0",
     "@angular/compiler": "~4.0.0",
