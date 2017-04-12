@@ -1,5 +1,11 @@
+@import "./assets/theme";
+
+header {
+  background: $secondary-background-color;
+}
+
+
 h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #0e0e0e;
   font-size: 250%;
 }
