@@ -25,6 +25,7 @@ yarn start
 The `npm start` command first compiles the application, 
 then simultaneously re-compiles and runs the `lite-server`.
 Both the compiler and the server watch for file changes.
+It also builds and starts the Node API.
 
 Shut it down manually with `Ctrl-C`.
 
@@ -32,9 +33,9 @@ Shut it down manually with `Ctrl-C`.
 ### npm scripts
 
 * `npm start` - runs the compiler and a server at the same time, both in "watch mode".
-* `npm run build` - runs the TypeScript compiler once.
+* `npm run build:ng` - runs the TypeScript compiler once.
 * `npm run build:watch` - runs the TypeScript compiler in watch mode; the process keeps running, awaiting changes to TypeScript files and re-compiling when it sees them.
-* `npm run serve` - runs the [lite-server](https://www.npmjs.com/package/lite-server)
+* `npm run serve:ng` - runs the lite-server
 * `npm test` - compiles, runs and watches the karma unit tests
 * `npm run e2e` - compiles and run protractor e2e tests, written in Typescript (*e2e-spec.ts)
 
