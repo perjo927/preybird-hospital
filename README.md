@@ -3,7 +3,7 @@ Info to come.
 
 ## Prerequisites
 
-Node.js and npm/yarn are essential to Angular development. Use yarn or npm. There is a yarn.lock file committed.
+Node.js and npm/yarn are essential to Angular development. Use [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). There is a `yarn.lock` file committed.
 
 
 ## Install npm packages
@@ -13,6 +13,13 @@ Install the npm packages described in the `package.json` and verify that it work
 ```shell
 npm install
 npm start
+```
+
+or
+
+```shell
+yarn
+yarn start
 ```
 
 The `npm start` command first compiles the application, 

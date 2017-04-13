@@ -1,11 +1,14 @@
 @import "./assets/theme";
 
 header {
+  padding: 1.5rem 0 0.5rem 1.5rem;
   background: $secondary-background-color;
+  box-shadow: 0 3px 9px 1px $secondary-background-color-dark;
 }
 
 
 h1 {
-  color: #0e0e0e;
+  margin-top: 0;  
+  color: $secondary-text-color;
   font-size: 250%;
 }
