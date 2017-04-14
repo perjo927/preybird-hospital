@@ -66,7 +66,7 @@
      transform="translate(-185.71428,-293.79077)">
     <path
        sodipodi:type="arc"
-       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:25.13761588;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#fff;stroke-width:25.13761588;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path2207"
        sodipodi:cx="217.14285"
        sodipodi:cy="305.71429"
@@ -76,7 +76,7 @@
        transform="matrix(0.7956204,0,0,0.7956204,264.37955,301.98681)" />
     <rect
        transform="scale(-1,-1)"
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#fff;fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect3180"
        width="362.27322"
        height="81.835243"
@@ -88,7 +88,7 @@
        height="81.835243"
        width="362.27322"
        id="rect3182"
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#fff;fill-opacity:1;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        transform="matrix(0,-1,1,0,0,0)" />
   </g>
 </svg>
