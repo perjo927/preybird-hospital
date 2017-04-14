@@ -1,1 +1,43 @@
-<h1>Hello {{name}}</h1>
+<header>
+    <!-- TODO: nav and nav component -->
+    <nav class="logo" (click)="toggleNav()">
+        <img src="./assets/logo.svg" />
+        <!--<span>&#9825;</span>-->
+    </nav>
+    <h1>{{title}}</h1>
+</header>
+<div [ngClass]="{'hidden': !isNavBar, 'nav': isNavBar}">
+    <ul>
+        <li>foo bar baz bang hey</li>
+        <li>foo bar cool bang hey</li>
+    </ul>
+</div>
+
+<!-- TODO: component -->
+<main>
+    <ul>
+        <li>
+            It should be possible to register a new patient with name and image.
+        </li>
+        <li>
+            It should be possible to list scheduled consultations for a given consultation date.
+            <ul>
+                <li>The patient name should be displayed.</li>
+            </ul>
+        </li>
+        <li>
+            It should be possible to select a consultation and view detailed information.
+            <ul>
+                <li>The information should include patient name, patient image, patient condition, doctor name, doctor roles,
+                    doctor image, room name, treatment machine name, machine capability, registration date and consultation
+                    date
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</main>
+
+<footer>
+    &copy; Hospitaly Inc. 2017
+</footer>
