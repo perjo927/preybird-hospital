@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Hospitality Inc.';
+  isNavBar = false;
+  toggleNav() {
+    this.isNavBar = !this.isNavBar;
+  }
 }

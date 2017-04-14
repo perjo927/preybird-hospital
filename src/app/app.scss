@@ -35,7 +35,7 @@ h1 {
     animation: slide-in 1.2s ease-in;
 }
 
-nav {
+nav {  
   &:hover {
     cursor: pointer;
     
@@ -55,6 +55,35 @@ nav {
   }
 }
 
+.hidden {
+  visibility: hidden;
+  position: absolute;  
+}
+
+.nav {    
+    background: $secondary-background-color;
+    width: 20vw;
+    position: absolute;
+    box-shadow: 0 4px 5px 1px $secondary-background-color-light;
+    animation: slide-simple 0.15s linear;    
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      line-height: 3rem;
+      text-align: center;
+      box-shadow: inset -2px -1px 1px 0px $secondary-background-color-dark;
+
+      &:hover {
+        background: $secondary-background-color-light;
+        cursor: pointer;
+      }
+    }    
+}
+
 .logo {
     flex: 3;
 
@@ -71,9 +100,11 @@ nav {
         animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);      
     }
 }
+
 main {
-    min-height: calc(100vh - 173px);
+    min-height: calc(100vh - 166px);
 }
+
 footer {
     left: 0;
     bottom: 0;

@@ -27,3 +27,15 @@
     letter-spacing: 0px;
   }
 }
+
+@keyframes slide-simple {
+  0% { 
+    left: -20vw;
+  }
+  50% { 
+    left: -15vw;
+  }
+  100% { 
+    left: 0;
+  }
+}

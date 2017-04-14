@@ -1,11 +1,17 @@
 <header>
     <!-- TODO: nav and nav component -->
-    <nav class="logo">
+    <nav class="logo" (click)="toggleNav()">
         <img src="./assets/logo.svg" />
         <!--<span>&#9825;</span>-->
     </nav>
     <h1>{{title}}</h1>
 </header>
+<div [ngClass]="{'hidden': !isNavBar, 'nav': isNavBar}">
+    <ul>
+        <li>foo bar baz bang hey</li>
+        <li>foo bar cool bang hey</li>
+    </ul>
+</div>
 
 <!-- TODO: component -->
 <main>
