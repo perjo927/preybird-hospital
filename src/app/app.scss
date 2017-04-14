@@ -25,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     flex: 7;
-    // @include break-at(wide-screens) { flex: 3; }  
     margin: 0 0 0 0;
     font-size: 5vw;
     animation: slide-in 1.2s ease-in;
@@ -38,7 +37,7 @@ h2 {
 }
 
 h3 {
-  font-size: 3vw;  
+  font-size: 2.5vw;  
   font-weight: 100;
   color: $contrast-color-dark;
   margin: 2.5rem 0 0 0;
@@ -119,6 +118,7 @@ nav {
 }
 
 main {
+  
   form {
     display: flex;
     flex-direction: row;
@@ -130,6 +130,7 @@ main {
       width: 37%;
     }
   }
+
   input {
     border: none;
     border-bottom: 1px solid grey;
@@ -143,7 +144,7 @@ main {
     &[type=text] {
       width: 36vw;
       font-size: 4.5vw;
-      color: $accent-color;
+      color: $primary-font-color;
 
       &:focus {
         border-bottom: 3px solid black;
@@ -152,6 +153,7 @@ main {
   }
 
   input[type=button] { 
+    background: $secondary-background-color-light;
     margin: 1rem 0;
     padding: 0.8rem;
     cursor: pointer;
@@ -159,15 +161,14 @@ main {
     border-radius: 2px;
 
     &:hover {
-      box-shadow: 0px 2px 8px 0px $secondary-background-color;      
+      box-shadow: 0 2px 8px 0 $secondary-background-color;      
     }
     &:active {
-      box-shadow: 0px 1px 4px 0px $secondary-background-color;      
+      box-shadow: 0 1px 3px 0 $secondary-background-color;  
     }
   }
   input[type=submit]  {
     background-color: $contrast-color-dark;
-    box-shadow: 0px 2px 6px 2px $contrast-color-light;
     border-radius: 50%;
     color: $secondary-font-color;
     padding: 1.5rem 2rem;
@@ -177,7 +178,11 @@ main {
 
     &:hover {
       background-color: $contrast-color;      
-      box-shadow: 0px 2px 6px 3px $contrast-color-light;    
+      box-shadow: 0px 3px 7px 1px $secondary-background-color-light;    
+    }
+    &:active {
+      background-color: $contrast-color;      
+      box-shadow: 0 1px 3px 0 $secondary-background-color-light;    
     }
   }
 }
