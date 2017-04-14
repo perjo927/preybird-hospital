@@ -6,7 +6,11 @@
     </nav>
     <h1>{{title}}</h1>
 </header>
-<div [ngClass]="{'hidden': !isNavBar, 'nav': isNavBar}">
+<div [ngClass]="{   
+                    'hidden': !isNavBar, 
+                    'nav': isNavBar,
+                    'disabled': isNavBarDisabled
+                }">
     <ul>
         <li>foo bar baz bang hey</li>
         <li>foo bar cool bang hey</li>
@@ -19,6 +23,7 @@
         <li>
             It should be possible to register a new patient with name and image.
         </li>
+
         <li>
             It should be possible to list scheduled consultations for a given consultation date.
             <ul>
@@ -35,6 +40,24 @@
             </ul>
         </li>
     </ul>
+
+    <section>
+        <h2>Patient Registration</h2>
+
+        <form>
+            <div>
+                <h3>First name</h3>
+                <input type="text" name="firstname" value="Mickey">
+            </div>
+            <div>
+                <h3>Last name</h3>
+                <input type="text" name="lastname" value="Mouse">
+            </div>
+
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
 
 </main>
 

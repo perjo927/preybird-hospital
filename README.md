@@ -22,7 +22,7 @@ yarn
 yarn start
 ```
 
-The `npm start` command first compiles the application, 
+The `npm start` command first compiles the application,
 then simultaneously re-compiles and runs the `lite-server`.
 Both the compiler and the server watch for file changes.
 It also starts the Node API.

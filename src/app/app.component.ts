@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Hospitality Inc.';
+  isNavBarDisabled = true;
   isNavBar = false;
+
   toggleNav() {
     this.isNavBar = !this.isNavBar;
   }
