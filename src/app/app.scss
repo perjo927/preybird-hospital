@@ -15,15 +15,11 @@ header {
     display: flex;
     align-items: flex-end;
     box-shadow: 0 4px 5px 1px $secondary-background-color-light;
+    
     @extend %secondary-sections;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $secondary-font-family;
 }
 
@@ -57,13 +53,13 @@ nav {
 
 .hidden {
   visibility: hidden;
-  position: absolute;  
+  position: absolute;
 }
 
 .nav {    
-    background: $secondary-background-color;
-    width: 20vw;
     position: absolute;
+    width: 20vw;    
+    background: $secondary-background-color;    
     box-shadow: 0 4px 5px 1px $secondary-background-color-light;
     animation: slide-simple 0.15s linear;    
 
@@ -88,8 +84,8 @@ nav {
     flex: 3;
 
     img {
+      width: 5vw;      
       border-radius: 50%;      
-      width: 5vw;
       animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
@@ -106,10 +102,11 @@ main {
 }
 
 footer {
+    overflow: hidden;
+    width: 100%;
     left: 0;
     bottom: 0;
-    width: 100%;
-    overflow: hidden;
     padding-bottom: 1.5rem;
+    
     @extend %secondary-sections;
 }
