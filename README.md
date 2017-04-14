@@ -1,5 +1,12 @@
 # Preybird-Hospitality
-Info to come.
+This app comes in four themes. To change theme: open `./src/app/style/_main.scss` and replace the **x** in `@import 'theme.x'` with a number from **1** to **4**; The default theme has a neutral character, while the others are more colorful.
+
+**Usage**
+1. Register a new patient from the landing page
+2. List scheduled consultations for a given consultation date
+3. Select a consultation and view detailed information
+
+
 
 ## Prerequisites
 
