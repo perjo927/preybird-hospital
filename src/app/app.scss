@@ -34,6 +34,14 @@ h1 {
 h2 {
   text-align: center;
   font-size: 4vw;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 3vw;  
+  font-weight: 100;
+  color: $contrast-color-dark;
+  margin: 2.5rem 0 0 0;
 }
 
 nav {  
@@ -114,8 +122,43 @@ main {
   form {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
+    flex-wrap: wrap;
+
+    div {
+      width: 40%;
+    }
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid grey;
+    margin: 0 2px;
+    font-family: $secondary-font-family;      
+    flex-wrap: wrap;
+
+
+    &[type=text] {
+      width: 35vw;
+      font-size: 4.5vw;
+      color: $accent-color;
+
+      &:focus {
+        box-sizing: border-box;
+        border-bottom: 3px solid black;
+      }
+    }
+  }
+  input[type=submit] {
+    background-color: $contrast-color;
+    border-radius: 50%;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    margin: 0 2px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 2rem;
   }
 }
 
