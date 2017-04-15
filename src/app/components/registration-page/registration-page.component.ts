@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Condition } from '../../models/condition.model';
-import { Patient } from '../../models/patient.model';
+// import { Condition } from '../../models/condition.model';
+// import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'registration-page',
