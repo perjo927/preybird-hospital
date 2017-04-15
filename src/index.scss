@@ -1,3 +1,5 @@
+@import './app/components/spinner/spinner.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -12,4 +14,8 @@ body {
   padding: 0;
   font-family: sans-serif; 
   font-size: 1.4rem;  
+}
+
+.spinner {
+  @extend %spinner;
 }
