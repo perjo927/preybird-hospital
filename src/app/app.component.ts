@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Hospitality Inc.';
+  logo = './assets/logo.svg';
 
   navBarItems = [
     {
@@ -23,7 +23,9 @@ export class AppComponent {
   ];
   showNavBar = false;
 
-  toggleNav() {
+  title = 'Hospitality Inc.';
+
+  toggleNavBar() {
     this.showNavBar = !this.showNavBar;
   }
 }

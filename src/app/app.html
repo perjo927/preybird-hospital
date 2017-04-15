@@ -1,11 +1,11 @@
 <header>
-    <!-- TODO: logo component -->
-    <nav class="logo" (click)="toggleNav()">
-        <img src="./assets/logo.svg" />
-        <!--<span>&#9825;</span>-->
+    <nav class="logo" (click)="toggleNavBar()">
+        <logo [url]="logo"></logo>
     </nav>
     <h1>{{title}}</h1>
 </header>
+
+<!-- TODO: RouterLink -->
 <navbar [show]="showNavBar" [items]="navBarItems"></navbar>
 
 <main>

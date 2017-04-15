@@ -7,7 +7,7 @@
     "build:ts": "tsc -p src/",
     "build:css": "node-sass src/ -o src/",
     "build:ng": "concurrently \"npm run build:ts\" \"npm run build:css\"",
-    "watch-css": "npm run build:css && node-sass src/ -o src/ --watch --recursive",
+    "watch-css": "concurrently \"npm run build:css\" \"node-sass src/ -o src/ --watch --recursive\"",
     "watch-ts": "tsc -p src/ -w",
     "build:watch": "npm-run-all -p watch-css watch-ts",
     "build:e2e": "tsc -p e2e/",
