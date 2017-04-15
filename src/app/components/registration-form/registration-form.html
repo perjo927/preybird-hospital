@@ -1,6 +1,4 @@
-{{diagnostic}}}
-
-<form #registrationForm="ngForm">
+<form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
     <div>
         <label for="firstname">First Name</label>
         <input  type="text" 
@@ -25,7 +23,8 @@
         <input  type="button"
                 id="image"
                 name="image"
-                value="Choose image">        
+                value="Choose image"
+                (click)="chooseImage()">
     </div>    
 
     <div class="condition">
@@ -34,7 +33,6 @@
                 name="condition"
                 required
                 [(ngModel)]="patient.condition">
-            <option>Pick ...</option>
             <option *ngFor="let condition of conditions" 
                     [value]="condition.type">
                 {{condition.text}}
@@ -44,6 +42,9 @@
 
     <div>
         <label>Register</label>
-        <button type="submit">&#10148;</button>
+        <button type="submit" 
+                [disabled]="!registrationForm.form.valid">
+            &#10148;
+        </button>
     </div>
 </form>

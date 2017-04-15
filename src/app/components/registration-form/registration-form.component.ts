@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Condition } from './condition.model';
 import { Patient } from './patient.model';
 
@@ -9,6 +9,8 @@ import { Patient } from './patient.model';
 })
 
 export class RegistrationFormComponent {
+
+  @Output() submitPatient = new EventEmitter<Patient>();
 
   conditions: Array<Condition> = [
     {
@@ -26,10 +28,11 @@ export class RegistrationFormComponent {
   ];
 
   patient = new Patient(null, null, null, 'http://placehold.it/100x100');
-  submitted = false;
 
-  onSubmit() { this.submitted = true; }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.patient); }
+  chooseImage() {
+    this.patient.image = 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg';
+  }
+  onSubmit() {
+    console.log("true");
+  }
 }
