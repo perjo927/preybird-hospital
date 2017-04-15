@@ -1,0 +1,60 @@
+@import '../../style/main';
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    div {
+        width: 37%;
+    }
+}
+input {
+    border: none;
+    border-bottom: 1px solid grey;
+    font-family: $secondary-font-family;
+    flex-wrap: wrap;
+    &:focus {
+        outline: none;
+    }    
+    &[type=text] {
+        width: 36vw;
+        font-size: 4.5vw;
+        color: $primary-font-color;
+        &:focus {
+            border-bottom: 3px solid black;
+        }
+    }
+}
+input[type=button] {
+    background: $secondary-background-color-light;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-bottom: none;
+    border-radius: 2px;
+    &:hover {
+        box-shadow: 0 2px 8px 0 $secondary-background-color;
+    }
+    &:active {
+        box-shadow: 0 1px 3px 0 $secondary-background-color;
+    }
+}
+input[type=submit] {
+    background-color: $contrast-color-dark;
+    border-radius: 50%;
+    color: $secondary-font-color;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 2rem;
+    &:hover {
+        background-color: $contrast-color;
+        box-shadow: 0px 3px 7px 1px $secondary-background-color-light;
+    }
+    &:active {
+        background-color: $contrast-color;
+        box-shadow: 0 1px 3px 0 $secondary-background-color-light;
+    }
+}

@@ -8,10 +8,22 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Hospitality Inc.';
-  isNavBarDisabled = true;
-  isNavBar = false;
+
+  navBarItems = [
+    {
+      text: 'Register New Patient',
+      route: 'patient',
+      enabled: true
+    },
+    {
+      text: 'Consultations',
+      route: 'consultations',
+      enabled: false
+    }
+  ];
+  showNavBar = false;
 
   toggleNav() {
-    this.isNavBar = !this.isNavBar;
+    this.showNavBar = !this.showNavBar;
   }
 }

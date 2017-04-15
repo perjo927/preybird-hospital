@@ -1,23 +1,13 @@
 <header>
-    <!-- TODO: nav and nav component -->
+    <!-- TODO: logo component -->
     <nav class="logo" (click)="toggleNav()">
         <img src="./assets/logo.svg" />
         <!--<span>&#9825;</span>-->
     </nav>
     <h1>{{title}}</h1>
 </header>
-<div [ngClass]="{   
-                    'hidden': !isNavBar, 
-                    'nav': isNavBar,
-                    'disabled': isNavBarDisabled
-                }">
-    <ul>
-        <li>foo bar baz bang hey</li>
-        <li>foo bar cool bang hey</li>
-    </ul>
-</div>
+<navbar [show]="showNavBar" [items]="navBarItems"></navbar>
 
-<!-- TODO: component -->
 <main>
     <ul>
         <li>
@@ -43,32 +33,9 @@
 
     <section>
         <h2>Patient Registration</h2>
+        <registration-form>
 
-        <form>
-            <div>
-                <h3>First name</h3>
-                <input  type="text" 
-                        name="firstname" 
-                        placeholder="Jane" 
-                        required>
-            </div>
-            <div>
-                <h3>Last name</h3>
-                <input  type="text" 
-                        name="lastname" 
-                        placeholder="Doe" 
-                        required>
-            </div>
-
-            <div>
-                <h3>Image</h3>
-                <input type="button" value="Choose image">
-            </div>
-
-            <div>
-                <input type="submit" value="&#10148;">
-            </div>
-        </form>
+        </registration-form>
     </section>
 
 </main>

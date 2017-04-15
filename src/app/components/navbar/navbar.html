@@ -1,0 +1,13 @@
+<div [ngClass]="{   
+                    'hidden': !show, 
+                    'nav': show                    
+                }">
+    <ul>
+        <li *ngFor="let item of items"
+            [ngClass]="{'disabled': !item.enabled}">
+            <a>{{item.text}}</a>
+            <!--TODO: RouterLink-->
+            <!--<a>{{text}}</a>-->
+        </li>
+    </ul>
+</div>
