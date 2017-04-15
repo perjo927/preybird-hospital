@@ -25,7 +25,7 @@ export class RegistrationFormComponent {
     },
   ];
 
-  patient = new Patient(null, null, null);
+  patient = new Patient(null, null, null, 'http://placehold.it/100x100');
   submitted = false;
 
   onSubmit() { this.submitted = true; }
