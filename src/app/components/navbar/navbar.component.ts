@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavItem } from './navitem.model';
+import { NavItem } from '../../models/navitem.model';
 
 @Component({
     selector: 'navbar',

@@ -51,10 +51,10 @@ form:after {
 }
 
 .ng-valid[required], .ng-valid.required  {
-  border-bottom: 0.5rem solid #42A948; 
+  border-bottom: 0.5rem solid $success; 
 }
 .ng-invalid:not(form)  {
-  border-bottom: 0.5rem solid #a94442; 
+  border-bottom: 0.5rem solid $alert; 
 }
 
 input {

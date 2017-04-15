@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Condition } from './condition.model';
-import { Patient } from './patient.model';
+import { Condition } from '../../models/condition.model';
+import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'registration-form',
@@ -32,7 +32,8 @@ export class RegistrationFormComponent {
   chooseImage() {
     this.patient.image = 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg';
   }
+  
   onSubmit() {
-    console.log("true");
+    this.submitPatient.emit(this.patient);
   }
 }

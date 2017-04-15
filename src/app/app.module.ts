@@ -12,8 +12,10 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   imports: [
+    // AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
