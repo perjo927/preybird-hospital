@@ -1,23 +1,38 @@
-<form>
+<form #registrationForm="ngForm">
     <div>
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" placeholder="Jane" required>
+        <input  type="text" 
+                id="firstname" name="firstname"
+                placeholder="Jane" 
+                required
+                [(ngModel)]="patient.firstName">
     </div>
     <div>
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" placeholder="Doe" required>
+        <input  type="text" 
+                id="lastname"
+                name="lastname"
+                placeholder="Doe"
+                required
+                [(ngModel)]="patient.lastName">
+        TODO: remove this: {{patient.lastName}}                        
     </div>
 
-    <div>
+    <div class="image">
         <label for="image">Image</label>
-        <input type="button" name="image" value="Choose image">
-    </div>
+        <img src="http://placehold.it/100x100"/>
+        <input  type="button"
+                id="image"
+                name="image"
+                value="Choose image">        
+    </div>    
 
-    <div>
+    <div class="condition">
         <label for="condition">Condition</label>
-        <select name="condition">
-            <option>Choose</option>
-            <option *ngFor="let condition of conditions" [value]="condition.type">
+        <select id="condition" required>
+            <option>Pick ...</option>
+            <option *ngFor="let condition of conditions" 
+                    [value]="condition.type">
                 {{condition.text}}
             </option>
         </select>

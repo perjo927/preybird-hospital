@@ -25,11 +25,11 @@ export class RegistrationFormComponent {
     },
   ];
 
-  model = new Patient(null, null, null);
+  patient = new Patient(null, null, null);
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
   // TODO: Remove this when we're done
-  // get diagnostic() { return JSON.stringify(this.model); }
+  get diagnostic() { return JSON.stringify(this.patient); }
 }
