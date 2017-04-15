@@ -6,6 +6,7 @@ import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { ConsultationPageComponent } from './components/consultation-page/consultation-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PatientPageComponent } from './components/patient-page/patient-page.component';
@@ -23,6 +24,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   ],
   declarations: [
     AppComponent,
+    ConsultationPageComponent,
     LogoComponent,
     NavbarComponent,
     RegistrationFormComponent,
