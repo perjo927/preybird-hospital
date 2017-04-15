@@ -1,21 +1,22 @@
 <form>
     <div>
-        <h3>First name</h3>
+        <label for="firstname">First Name</label>
         <input type="text" name="firstname" placeholder="Jane" required>
     </div>
     <div>
-        <h3>Last name</h3>
+        <label for="lastname">Last Name</label>
         <input type="text" name="lastname" placeholder="Doe" required>
     </div>
 
     <div>
-        <h3>Image</h3>
-        <input type="button" value="Choose image">
+        <label for="image">Image</label>
+        <input type="button" name="image" value="Choose image">
     </div>
 
     <div>
-        <h3>Condition</h3>        
-        <select>
+        <label for="condition">Condition</label>
+        <select name="condition">
+            <option>Choose</option>
             <option *ngFor="let condition of conditions" [value]="condition.type">
                 {{condition.text}}
             </option>
@@ -23,7 +24,7 @@
     </div>
 
     <div>
-        <h3>Register</h3>   
-        <input type="submit" value="&#10148;">
+        <label>Register</label>
+        <button type="submit">&#10148;</button>
     </div>
 </form>

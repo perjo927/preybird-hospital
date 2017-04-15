@@ -2,14 +2,14 @@
 
 :host {
     font-family: $secondary-font-family;
-    
 }
 
-h3 {
-  font-size: 2.5vw;  
-  font-weight: 100;
-  color: $accent-color;
-  margin: 2.5rem 0 0 0;
+label {
+    display: block;
+    font-size: 2.5vw;  
+    font-weight: 100;
+    color: $accent-color;
+    margin: 2.5rem 0 0 0;
 }
 
 form {
@@ -88,10 +88,13 @@ input[type=button] {
     }
 }
 
-input[type=submit] {
+// button[type=submit] {
+button {
     margin: 1rem 0;    
     padding: 1.5rem 2rem;
+
     border-radius: 50%;    
+    border-width: 1px;
 
     font-size: 2rem;
     background-color: $contrast-color-dark;
@@ -101,6 +104,10 @@ input[type=submit] {
     &:hover {
         background-color: $contrast-color;
         box-shadow: 0px 3px 7px 1px $secondary-background-color-light;
+    }
+
+    &:focus {
+        outline: none;                
     }
 
     &:active {
