@@ -32,8 +32,9 @@ export class RegistrationFormComponent {
   chooseImage() {
     this.patient.image = 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg';
   }
-  
+
   onSubmit() {
     this.submitPatient.emit(this.patient);
+    this.patient = new Patient(null, null, null, 'http://placehold.it/100x100');
   }
 }

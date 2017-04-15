@@ -5,37 +5,12 @@
     <h1>{{title}}</h1>
 </header>
 
-<!-- TODO: RouterLink -->
 <navbar [show]="showNavBar" [items]="navBarItems"></navbar>
 
 <main>
-    <ul>
-        <li>
-            It should be possible to register a new patient with name and image.
-        </li>
-
-        <li>
-            It should be possible to list scheduled consultations for a given consultation date.
-            <ul>
-                <li>The patient name should be displayed.</li>
-            </ul>
-        </li>
-        <li>
-            It should be possible to select a consultation and view detailed information.
-            <ul>
-                <li>The information should include patient name, patient image, patient condition, doctor name, doctor roles,
-                    doctor image, room name, treatment machine name, machine capability, registration date and consultation
-                    date
-                </li>
-            </ul>
-        </li>
-    </ul>
-
     <section>
-        <h2>Patient Registration</h2>
-        <registration-form (submitPatient)="registerPatient($event)"></registration-form>
+        <router-outlet></router-outlet>        
     </section>
-
 </main>
 
 <footer>
