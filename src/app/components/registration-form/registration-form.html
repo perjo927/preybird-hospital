@@ -14,6 +14,16 @@
     </div>
 
     <div>
+        <h3>Condition</h3>        
+        <select>
+            <option *ngFor="let condition of conditions" [value]="condition.type">
+                {{condition.text}}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <h3>Register</h3>   
         <input type="submit" value="&#10148;">
     </div>
 </form>

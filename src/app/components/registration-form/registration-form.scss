@@ -1,5 +1,10 @@
 @import '../../style/main';
 
+:host {
+    font-family: $secondary-font-family;
+    
+}
+
 h3 {
   font-size: 2.5vw;  
   font-weight: 100;
@@ -11,11 +16,33 @@ form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;    
+    align-items: flex-end;    
     justify-content: space-around;
-    align-items: flex-end;
-    
+    @include break-at(small-to-medium-screens) {
+        justify-content: center;
+    }
+
     div {
-        width: 37%;
+        width: 37%;        
+        @include break-at(small-to-medium-screens) {
+            width: 51%; 
+        }  
+        
+        &:last-child {
+            margin-left: 6vw;
+            @include break-at(small-to-medium-screens) { 
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+form:after {
+    content: "";
+    flex: auto;
+
+    @include break-at(small-to-medium-screens) { 
+        flex: 0;
     }
 }
 
@@ -62,12 +89,11 @@ input[type=button] {
 }
 
 input[type=submit] {
+    margin: 1rem 0;    
     padding: 1.5rem 2rem;
-    border-radius: 50%;
-    
-    font-weight: 900;
-    font-size: 2rem;
+    border-radius: 50%;    
 
+    font-size: 2rem;
     background-color: $contrast-color-dark;
     color: $secondary-font-color;
     cursor: pointer;
@@ -76,8 +102,18 @@ input[type=submit] {
         background-color: $contrast-color;
         box-shadow: 0px 3px 7px 1px $secondary-background-color-light;
     }
+
     &:active {
         background-color: $contrast-color;
         box-shadow: 0 1px 3px 0 $secondary-background-color-light;
     }
+}
+
+select {    
+    margin: 1rem 0;
+    
+    padding: 1rem;
+    border-radius: 4px;
+    border-width: 2px;
+    font-size: 2rem;
 }
