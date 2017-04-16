@@ -36,5 +36,4 @@ export class RegistrationPageComponent {
       console.error(`${err.status} ${err.statusText}`);
     }
   }
-
 }

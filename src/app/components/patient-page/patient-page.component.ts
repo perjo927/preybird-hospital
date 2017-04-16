@@ -17,7 +17,6 @@ export class PatientPageComponent implements OnInit {
 
   private patient: RegisteredPatient;
 
-  consultations: any; // TODO Array<Consultation>
   imageUrl = 'http://placehold.it/100x100';
 
   constructor(
@@ -34,8 +33,6 @@ export class PatientPageComponent implements OnInit {
 
       if (patient) {
         this.patient = patient;
-        // this.name = patient.name;
-        // this.condition = patient.condition;
 
         if (patient.imageId) {
           const imageUrl = await this.getImage(patient.imageId);
@@ -66,15 +63,4 @@ export class PatientPageComponent implements OnInit {
     }
     return null;
   }
-
-  private async getConsultations(id: string): Promise<any> { // TODO Array<Consultation>
-    try {
-      const consultations = await this.patientService.get<any>(id); // TODO COnslutation
-      return null;
-    } catch (err) {
-      console.error(`${err.status} ${err.statusText}`);
-    }
-    return null;
-  }
-
 }

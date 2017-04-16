@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Injectable, Output } from '@angular/core';
 import { ImageService } from '../../services/image.service';
-import { Condition } from '../../models/condition.model';
 import { Patient } from '../../models/patient.model';
 import { PatientImage } from '../../models/image.model';
+import { conditions } from '../../data/condition.data';
 
 @Component({
   selector: 'registration-form',
@@ -15,21 +15,7 @@ export class RegistrationFormComponent {
 
   @Output() submitPatient = new EventEmitter<Patient>();
 
-  conditions: Array<Condition> = [
-    {
-      text: 'Breast Cancer',
-      type: 'breastcancer'
-    },
-    {
-      text: 'Head & Neck Cancer',
-      type: 'headandneckcancer'
-    },
-    {
-      text: 'Flu',
-      type: 'flu'
-    },
-  ];
-
+  conditions = conditions;
   patient = new Patient(null, null, null, { id: null, url: 'http://placehold.it/100x100' });
 
   constructor(
