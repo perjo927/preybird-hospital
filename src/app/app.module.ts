@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { ConsultationComponent } from './components/consultation/consultation.component';
+// import { ConsultationDetailPageComponent } from './components/consultation-detail-page/consultation-detail-page.component';
 import { ConsultationPageComponent } from './components/consultation-page/consultation-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -25,7 +27,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   ],
   declarations: [
     AppComponent,
+    ConsultationComponent,
     ConsultationPageComponent,
+    // ConsultationDetailPageComponent,
     LogoComponent,
     NavbarComponent,
     RegistrationFormComponent,

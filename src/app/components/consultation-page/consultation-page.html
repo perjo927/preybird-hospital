@@ -1,2 +1,8 @@
-<h2>Consultation {{patient}}</h2>
-<!--<consultation></consultation>-->
+<h2>Consultations</h2>
+Pick an available date
+<div *ngFor="let date of dates"> {{date}}  </div>
+<consultation 
+    *ngFor="let o of consultationPatientMap"
+    [consultation]="o.consultation"
+    [patient]="o.patient">
+</consultation>
