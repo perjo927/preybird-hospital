@@ -1,8 +1,8 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-// import { Condition } from '../../models/condition.model';
 import { Patient } from '../../models/patient.model';
 import { PatientService } from '../../services/patient.service';
+import { RegisteredPatient } from '../../models/registered-patient.model';
 
 @Component({
   selector: 'registration-page',
@@ -14,8 +14,7 @@ import { PatientService } from '../../services/patient.service';
 export class RegistrationPageComponent {
 
   constructor(
-    private patientService: PatientService
-    ,
+    private patientService: PatientService,
     private router: Router
   ) { }
 
@@ -31,8 +30,7 @@ export class RegistrationPageComponent {
 
   private async postPatient(body: any) {
     try {
-      const patient: Patient = await this.patientService.post<Patient>(body);
-      console.log(patient)
+      const patient: RegisteredPatient = await this.patientService.post<RegisteredPatient>(body);
       this.router.navigate(['/patient', patient.id]);
     } catch (err) {
       console.error(`${err.status} ${err.statusText}`);

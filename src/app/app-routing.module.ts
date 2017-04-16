@@ -7,10 +7,11 @@ import { ConsultationPageComponent } from './components/consultation-page/consul
 const routes: Routes = [
     { path: '', redirectTo: '/register', pathMatch: 'full' },
     { path: 'register', component: RegistrationPageComponent },
-    { path: 'patient', redirectTo: '/patient/null', pathMatch: 'full' },
+    { path: 'patient', redirectTo: '/patient/undefined', pathMatch: 'full' },
     { path: 'patient/:id', component: PatientPageComponent },
-    { path: 'consultations', redirectTo: '/consultations/null', pathMatch: 'full' },
-    { path: 'consultations/:id', component: ConsultationPageComponent }
+    { path: 'consultations', component: ConsultationPageComponent }
+    // ,
+    // { path: 'consultations/:id', component: ConsultationPageDetailComponent }
 ];
 
 @NgModule({

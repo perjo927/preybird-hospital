@@ -1,14 +1,7 @@
-<div [ngClass]="{   
-                    'hidden': !show, 
-                    'nav': show                    
-                }">
+<div [ngClass]="{ 'hidden': !show, 'nav': show }">
     <ul>
-        <li *ngFor="let item of items"
-            [ngClass]="{'disabled': !item.enabled}">
-            <!-- TODO: How to enable route? -->
-            <!-- TODO: Pass patient id to link -->
-            <a *ngIf="item.enabled" [routerLink]="item.route">{{item.text}}</a>
-            <a *ngIf="!item.enabled" >{{item.text}}</a>
+        <li *ngFor="let item of items">
+            <a [routerLink]="item.route">{{item.text}}</a>
         </li>
     </ul>
 </div>

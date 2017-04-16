@@ -34,7 +34,9 @@ export class RegistrationFormComponent {
 
   constructor(
     private imageService: ImageService
-  ) { }
+  ) {
+      this.postImage(this.patient.image.url);
+   }
 
   chooseImage() {
     this.patient.image = { id: null, url: 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg' };
@@ -48,7 +50,7 @@ export class RegistrationFormComponent {
 
   private async postImage(imageUrl: string) {
     try {
-      const patientImage: PatientImage = await this.imageService.post<PatientImage>(`url=${imageUrl}`);
+      const patientImage: PatientImage = await this.imageService.post<PatientImage>({url: imageUrl});
       this.patient.image.id = patientImage.id;
     } catch (err) {
       console.error(`${err.status} ${err.statusText}`);

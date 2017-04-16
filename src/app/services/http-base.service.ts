@@ -16,7 +16,6 @@ export class HttpBaseService implements IHttpBaseService {
         this.fullUrl = `${this.baseUrl}${this.resource}`;
     }
 
-    // TODO: async await
     getAll<T>(): Promise<T[]> {
         return this.http.get(this.fullUrl)
             .toPromise()
@@ -24,7 +23,7 @@ export class HttpBaseService implements IHttpBaseService {
             .catch(this.handleError);
     }
 
-    get<T>(id: number): Promise<T> {
+    get<T>(id: string): Promise<T> {
         return this.http.get(`${this.fullUrl}/${id}`)
             .toPromise()
             .then(response => response.json() as T)

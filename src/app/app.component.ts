@@ -19,13 +19,11 @@ export class AppComponent {
   navBarItems: Array<NavItem> = [
     {
       text: 'Register New Patient',
-      route: 'register',
-      enabled: true
+      route: 'register'
     },
     {
       text: 'Consultations',
-      route: 'consultations',
-      enabled: false
+      route: 'consultations'
     }
   ];
 

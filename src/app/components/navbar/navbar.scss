@@ -34,12 +34,3 @@ li {
         background: $secondary-background-color-light;
     }
 }
-
-.disabled {
-    cursor: not-allowed;
-    
-    a {
-        color: $font-color-disabled;        
-        cursor: not-allowed;
-    }    
-}

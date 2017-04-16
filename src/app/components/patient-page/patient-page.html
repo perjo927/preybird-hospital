@@ -1,2 +1,17 @@
-<h2>Patient {{name}}</h2>
+<div *ngIf="patient">
+    <h2>{{patient.name}}</h2>
+    <img [src]="imageUrl" />
+
+    <p>
+        <b>Condition: </b> {{patient.condition}}
+    </p>
+</div>
+
+<div *ngIf="!patient">
+    <h2>User Not Found</h2>
+    <img [src]="imageUrl" />    
+</div>
+
+
+<!-- TODO -->
 <!--<patient></patient>-->
