@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { NavItem } from './models/navitem.model';
 import { ImageService } from './services/image.service';
+import { PatientService } from './services/patient.service';
 
 @Component({
   selector: 'hospital-app',
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
   providers: [
-    ImageService
+    ImageService,
+    PatientService
   ]
 })
 
@@ -17,7 +19,7 @@ export class AppComponent {
   navBarItems: Array<NavItem> = [
     {
       text: 'Register New Patient',
-      route: '',
+      route: 'register',
       enabled: true
     },
     {

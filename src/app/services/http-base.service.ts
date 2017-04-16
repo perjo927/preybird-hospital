@@ -14,12 +14,10 @@ export class HttpBaseService implements IHttpBaseService {
         private resource: string
     ) {
         this.fullUrl = `${this.baseUrl}${this.resource}`;
-        console.log(this.fullUrl);
     }
 
     // TODO: async await
     getAll<T>(): Promise<T[]> {
-        console.log(this.fullUrl)
         return this.http.get(this.fullUrl)
             .toPromise()
             .then(response => response.json() as T[])
@@ -33,7 +31,7 @@ export class HttpBaseService implements IHttpBaseService {
             .catch(this.handleError);
     }
 
-    post<T>(body: string): Promise<T> {
+    post<T>(body: any): Promise<T> {
         return this.http.post(this.fullUrl, body)
             .toPromise()
             .then(response => response.json() as T)
@@ -41,6 +39,7 @@ export class HttpBaseService implements IHttpBaseService {
     }
 
     private handleError(error: any): Promise<any> {
+        console.error(error)
         return Promise.reject(error.message || error);
     }
 }

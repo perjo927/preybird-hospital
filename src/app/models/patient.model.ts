@@ -6,6 +6,7 @@ export class Patient {
     public firstName: number,
     public lastName: string,
     public condition: Condition,
-    public image?: PatientImage
-  ) {  }
+    public image?: PatientImage,
+    public id?: string,
+  ) { }
 }

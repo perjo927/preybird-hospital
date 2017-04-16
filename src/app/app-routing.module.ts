@@ -9,8 +9,8 @@ const routes: Routes = [
     { path: 'register', component: RegistrationPageComponent },
     { path: 'patient', redirectTo: '/patient/null', pathMatch: 'full' },
     { path: 'patient/:id', component: PatientPageComponent },
-    { path: 'consultation', redirectTo: '/consultation/null', pathMatch: 'full' },
-    { path: 'consultation/:id', component: ConsultationPageComponent }
+    { path: 'consultations', redirectTo: '/consultations/null', pathMatch: 'full' },
+    { path: 'consultations/:id', component: ConsultationPageComponent }
 ];
 
 @NgModule({
