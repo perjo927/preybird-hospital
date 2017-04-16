@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Injectable, Output } from '@angular/core';
+import { ImageService } from '../../services/image.service';
 import { Condition } from '../../models/condition.model';
 import { Patient } from '../../models/patient.model';
+import { PatientImage } from '../../models/image.model';
 
 @Component({
   selector: 'registration-form',
@@ -8,6 +10,7 @@ import { Patient } from '../../models/patient.model';
   styleUrls: ['./registration-form.css']
 })
 
+@Injectable()
 export class RegistrationFormComponent {
 
   @Output() submitPatient = new EventEmitter<Patient>();
@@ -27,14 +30,28 @@ export class RegistrationFormComponent {
     },
   ];
 
-  patient = new Patient(null, null, null, 'http://placehold.it/100x100');
+  patient = new Patient(null, null, null, { id: null, url: 'http://placehold.it/100x100' });
+
+  constructor(
+    private imageService: ImageService
+  ) { }
 
   chooseImage() {
-    this.patient.image = 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg';
+    this.patient.image = { id: null, url: 'https://upload.wikimedia.org/wikipedia/commons/8/81/Creative-Tail-People-girl.svg' };
+    this.postImage(this.patient.image.url);
   }
 
   onSubmit() {
     this.submitPatient.emit(this.patient);
-    this.patient = new Patient(null, null, null, 'http://placehold.it/100x100');
+    this.patient = new Patient(null, null, null, { id: null, url: 'http://placehold.it/100x100' });
+  }
+
+  private async postImage(imageUrl: string) {
+    try {
+      const patientImage: PatientImage = await this.imageService.post<PatientImage>(`url=${imageUrl}`);
+      this.patient.image.id = patientImage.id;
+    } catch (err) {
+      console.error(`${err.status} ${err.statusText}`);
+    }
   }
 }

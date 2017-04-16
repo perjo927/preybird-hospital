@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { NavItem } from './models/navitem.model';
+import { ImageService } from './services/image.service';
 
 @Component({
   selector: 'hospital-app',
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrls: ['./app.css'],
+  providers: [
+    ImageService
+  ]
 })
 
 export class AppComponent {

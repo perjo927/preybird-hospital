@@ -5,9 +5,10 @@
     <ul>
         <li *ngFor="let item of items"
             [ngClass]="{'disabled': !item.enabled}">
-            <a>{{item.text}}</a>
-            <!--TODO: RouterLink-->
-            <!--<a>{{text}}</a>-->
+            <!-- TODO: How to enable route? -->
+            <!-- TODO: Pass patient id to link -->
+            <a [routerLink]="item.link">{{item.text}}</a>
+
         </li>
     </ul>
 </div>

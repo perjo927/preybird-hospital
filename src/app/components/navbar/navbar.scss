@@ -14,6 +14,11 @@
     animation: slide-simple 0.15s linear;
 }
 
+a {
+    text-decoration: none;
+    color: $secondary-font-color;
+}
+
 ul {
     padding: 0;
     margin: 0;
@@ -31,6 +36,10 @@ li {
 }
 
 .disabled {
-    color: $font-color-disabled;        
     cursor: not-allowed;
+    
+    a {
+        color: $font-color-disabled;        
+        cursor: not-allowed;
+    }    
 }
