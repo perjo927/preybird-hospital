@@ -1,0 +1,36 @@
+@import '../../style/main';
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+.nav {
+    position: absolute;
+    width: 20vw;
+
+    background: $secondary-background-color;
+    box-shadow: 0 4px 5px 1px $secondary-background-color-light;
+    animation: slide-simple 0.15s linear;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-font-color;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    line-height: 3rem;
+    text-align: center;
+    box-shadow: inset -2px -1px 1px 0 $secondary-background-color-dark;
+    cursor: pointer;
+    
+    &:hover {
+        background: $secondary-background-color-light;
+    }
+}

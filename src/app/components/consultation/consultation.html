@@ -1,0 +1,57 @@
+<section class="title">
+    <p>
+        <b>{{patient.name}}</b>
+        <span>@ {{consultation.consultationDate | date: 'd:j' }}</span>
+    </p>
+    <a (click)="toggleExpand()">
+        <span *ngIf="!isExpanded">View details &raquo;</span>
+        <span *ngIf="isExpanded">Close details &laquo;</span>
+    </a>
+</section>
+{{consultationDetails}}
+
+<section *ngIf="isExpanded" class="details" [ngClass]="{'show': isExpanded}">
+    <article>
+        <span (click)="toggleExpand()" class="close">&times;</span>
+        <div class="container">
+            <div class="col">
+                <h4>{{patient.name}}</h4>
+                <img [src]="patientImage" />
+            </div>
+
+            <div class="col">
+                <p>
+                    <b>Condition:</b> {{getCondition(patient.condition)}}
+                </p>
+                <p>
+                    <b>Registration date:</b> {{consultation.registrationDate | date: 'yMdjm' }}
+                </p>
+                <p>
+                    <b>Consultation date:</b> {{consultation.consultationDate | date: 'yMdjm' }}
+                </p>
+            </div>
+
+            <div class="col">
+                <p>
+                    <b>Doctor:</b> {{doctor.name}}
+                </p>
+                <img [src]="doctor.imageUrl" />
+                <p><i>{{doctor.roles}}</i></p>
+            </div>
+
+            <div class="col">
+                <p>
+                    <b>Room:</b> {{room.name}}
+                </p>
+                <p>
+                    <b>Machine: </b> {{machine.name}}
+                    <span>{{machine.capability}}</span>
+                </p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section *ngIf="isExpanded">
+
+</section>

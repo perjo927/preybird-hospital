@@ -2,6 +2,7 @@
 @import "fonts";
 
 $primary-background-color:          $white;
+
 $secondary-background-color-dark:   $maroon-flush;
 $secondary-background-color:        $amaranth;
 $secondary-background-color-light:  $chantilly;
@@ -11,10 +12,14 @@ $secondary-font-family:             $open-sans;
 $primary-font-color:                $mine-shaft;
 $secondary-font-color:              $white;
 $tertiary-font-color:               $boulder;
+$font-color-disabled:               $brown;
 
 $divider-color:                     $silver;
 $accent-color:                      $wild-strawberry;
 
-$contrast-color-dark:              $lochmara;
-$contrast-color:                   $cerulean;
-$contrast-color-light:             $french-pass;
+$contrast-color-dark:               $lochmara;
+$contrast-color:                    $cerulean;
+$contrast-color-light:              $french-pass;
+
+$alert:                             $persian-red;
+$success:                           $fruit-salad;

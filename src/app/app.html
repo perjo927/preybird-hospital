@@ -1,41 +1,16 @@
 <header>
-    <!-- TODO: nav and nav component -->
-    <nav class="logo" (click)="toggleNav()">
-        <img src="./assets/logo.svg" />
-        <!--<span>&#9825;</span>-->
+    <nav class="logo" (click)="toggleNavBar()">
+        <logo [url]="logo"></logo>
     </nav>
     <h1>{{title}}</h1>
 </header>
-<div [ngClass]="{'hidden': !isNavBar, 'nav': isNavBar}">
-    <ul>
-        <li>foo bar baz bang hey</li>
-        <li>foo bar cool bang hey</li>
-    </ul>
-</div>
 
-<!-- TODO: component -->
+<navbar [show]="showNavBar" [items]="navBarItems"></navbar>
+
 <main>
-    <ul>
-        <li>
-            It should be possible to register a new patient with name and image.
-        </li>
-        <li>
-            It should be possible to list scheduled consultations for a given consultation date.
-            <ul>
-                <li>The patient name should be displayed.</li>
-            </ul>
-        </li>
-        <li>
-            It should be possible to select a consultation and view detailed information.
-            <ul>
-                <li>The information should include patient name, patient image, patient condition, doctor name, doctor roles,
-                    doctor image, room name, treatment machine name, machine capability, registration date and consultation
-                    date
-                </li>
-            </ul>
-        </li>
-    </ul>
-
+    <section>
+        <router-outlet></router-outlet>        
+    </section>
 </main>
 
 <footer>

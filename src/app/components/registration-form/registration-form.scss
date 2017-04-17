@@ -1,0 +1,165 @@
+@import '../../style/main';
+
+:host {
+    font-family: $secondary-font-family;
+}
+
+label {
+    display: block;
+    font-size: 2.5vw;  
+    font-weight: 100;
+    color: $accent-color;
+    margin: 2.5rem 0 0 0;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    align-items: flex-start;    
+    justify-content: space-around;
+    @include break-at(small-to-medium-screens) {
+        justify-content: center;
+    }
+
+    div {
+        width: 37%;        
+        @include break-at(small-to-medium-screens) {
+            width: 51%; 
+
+            .image {
+                width: 25%;
+            }
+        }          
+
+        &:last-child {
+            margin-left: 6vw;
+            @include break-at(small-to-medium-screens) { 
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+form:after {
+    content: "";
+    flex: auto;
+
+    @include break-at(small-to-medium-screens) { 
+        flex: 0;
+    }
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-bottom: 0.5rem solid $success; 
+}
+.ng-invalid:not(form)  {
+  border-bottom: 0.5rem solid $alert; 
+}
+
+input {
+    flex-wrap: wrap;
+    
+    border: none;
+    border-bottom: 1px solid grey;
+
+    font-family: $secondary-font-family;
+
+    &:focus {
+        outline: none;
+    }    
+
+    &[type=text] {
+        width: 36vw;
+        font-size: 4.5vw;
+        color: $primary-font-color;
+
+        &:focus {
+            border-bottom: 3px solid black;
+        }
+    }
+}
+
+input[type=button] {
+    margin: 1rem 0;
+    padding: 0.8rem;
+
+    border-bottom: none;
+    border-radius: 2px;
+
+    background: $secondary-background-color-light;    
+    cursor: pointer;
+    
+    &:hover {
+        box-shadow: 0 2px 8px 0 $secondary-background-color;
+    }
+
+    &:active {
+        box-shadow: 0 1px 3px 0 $secondary-background-color;
+    }
+}
+
+button {
+    margin: 1rem 0;    
+    padding: 1.5rem 2rem;
+
+    border-radius: 50%;    
+    border-width: 1px;
+
+    font-size: 2rem;
+    background-color: $contrast-color-dark;
+    color: $secondary-font-color;
+    cursor: pointer;
+
+    &[disabled] {
+        background: $secondary-background-color-light;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $contrast-color-light;
+        }
+    }
+    
+    &:hover {
+        background-color: $contrast-color;
+        box-shadow: 0px 3px 7px 1px $secondary-background-color-light;
+    }
+
+    &:focus {
+        outline: none;                
+    }
+
+    &:active {
+        background-color: $contrast-color;
+        box-shadow: 0 1px 3px 0 $secondary-background-color-light;
+    }
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: 1rem 0;
+
+    @include break-at(small-to-medium-screens) { 
+        margin: 0.3rem 0;
+    }    
+}
+
+select {    
+    margin: 1rem 0;
+    
+    padding: 1rem;
+    border-radius: 4px;
+    border-width: 2px;
+    font-size: 2vw;
+}
+
+.condition {
+
+}

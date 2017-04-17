@@ -1,0 +1,16 @@
+@import '../../app.scss';
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    border-radius: 50%;
+    width: 15vw;
+}
+
+p {
+    font-size: 2vw;
+}
