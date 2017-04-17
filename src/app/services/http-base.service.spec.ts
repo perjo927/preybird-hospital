@@ -26,13 +26,6 @@ describe('As an App I want to consume http services so that I can fetch external
             post = await service.post('body')
         });
 
-        describe('When the service is configured', () => {
-            it('Then the fullUrl must include fooResource', () => {
-                expect(service.fullUrl).toBe('http://localhost:8080/fooResource')                
-            });
-        });
-
-
         xdescribe('When I read the results', () => {
 
             it('Then the get should be successful', () => expect(get).toBe('success'));

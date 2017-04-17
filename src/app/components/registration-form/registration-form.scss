@@ -10,6 +10,11 @@ label {
     font-weight: 100;
     color: $accent-color;
     margin: 2.5rem 0 0 0;
+
+    @include break-at(wide-screens) { 
+        width: 30vw;
+        font-size: 3rem;
+    }
 }
 
 form {
@@ -21,9 +26,18 @@ form {
     @include break-at(small-to-medium-screens) {
         justify-content: center;
     }
+    @include break-at(wide-screens) { 
+        justify-content: space-between;
+    }
 
     div {
-        width: 37%;        
+        width: 37%;
+        
+        @include break-at(wide-screens) { 
+            width: 30%;
+            margin-left: 2vw;
+        }
+    
         @include break-at(small-to-medium-screens) {
             width: 51%; 
 
@@ -73,6 +87,11 @@ input {
         width: 36vw;
         font-size: 4.5vw;
         color: $primary-font-color;
+
+        @include break-at(wide-screens) { 
+            width: 30vw;
+            font-size: 4rem;
+        }
 
         &:focus {
             border-bottom: 3px solid black;

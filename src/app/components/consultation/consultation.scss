@@ -10,11 +10,18 @@
         margin-top: 0;
         padding: 1vw;
         font-size: 2vw;
+        @include break-at(wide-screens) {
+            font-size: 3rem;
+        }
     }
 
     span {
         font-size: 1.5vw;        
         color: $tertiary-font-color;
+
+        @include break-at(wide-screens) {
+            font-size: 2rem;
+        }
 
         &:hover {
             color: $accent-color;
