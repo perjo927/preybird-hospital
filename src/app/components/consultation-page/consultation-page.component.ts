@@ -15,10 +15,10 @@ export class ConsultationPageComponent implements OnInit {
 
   consultations: Array<Consultation>;
   patients: Array<RegisteredPatient>;
-  consultationPatientMap: any;
-  datesCPMap: any;
+  patientConsultations: Array<any>;
+  datesMap = {};
   dates: any;
-  expanded: false;
+  expanded: false; // TODO
   selectedDate: string;
 
   constructor(
@@ -37,34 +37,11 @@ export class ConsultationPageComponent implements OnInit {
     this.consultations = await this.getConsultations();
     this.patients = await this.getPatients();
 
-    // Sort by date
-    this.consultations.sort((a: any, b: any): any => {
-      return a.consultationDate > b.consultationDate;
-    });
-
-    // Map consultations with patients
-    this.consultationPatientMap = this.consultations.map((element) => {
-      return {
-        consultation: element,
-        patient: this.getPatient(element.patientId)
-      };
-    });
-
-    // Map dates and consultations/patients
-    this.datesCPMap = {};
-    for (let cp of this.consultationPatientMap) {
-      const c = cp.consultation;
-      const d: string = new Date(c.consultationDate).toLocaleDateString();
-
-      if (!this.datesCPMap[d]) {
-        this.datesCPMap[d] = [];
-      }
-      this.datesCPMap[d].push(c);
-
-    }
-    this.dates = Object.keys(this.datesCPMap)
-    console.log(this.datesCPMap)
-
+    // Massage
+    this.consultations = this.sortConsultations(this.consultations);
+    this.patientConsultations = this.mapConsultations(this.consultations);
+    this.datesMap = this.mapDates(this.datesMap);
+    this.dates = Object.keys(this.datesMap);
   }
 
   getPatient(id: string): RegisteredPatient {
@@ -90,5 +67,35 @@ export class ConsultationPageComponent implements OnInit {
       console.error(`${err.status} ${err.statusText}`);
     }
     return null;
+  }
+
+  private sortConsultations(consultations: Array<Consultation>): Array<Consultation> {
+    return consultations.sort((a: any, b: any): any => {
+      return a.consultationDate > b.consultationDate;
+    });
+  }
+
+  private mapConsultations(consultations: Array<Consultation>): Array<any> {
+    return consultations.map((element) => {
+      return {
+        consultation: element,
+        patient: this.getPatient(element.patientId)
+      };
+    });
+  }
+
+  private mapDates(datesMap: any) {
+    // for (let cp of this.patientConsultations) {
+    for (let c of this.consultations) {
+      // const c = cp.consultation; 
+      const d: string = new Date(c.consultationDate).toLocaleDateString();
+
+      if (!datesMap[d]) {
+        datesMap[d] = [];
+      }
+
+      datesMap[d].push(c);
+    }
+    return datesMap;
   }
 }

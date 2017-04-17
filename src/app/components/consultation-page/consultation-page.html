@@ -16,8 +16,8 @@
 </div>
 
 <h3>{{selectedDate}}</h3>
-<section *ngIf="selectedDate && !expanded" class="consultations">
-    <consultation   *ngFor="let o of consultationPatientMap | dateFilter:selectedDate" 
+<section *ngIf="selectedDate" class="consultations">
+    <consultation   *ngFor="let o of patientConsultations | dateFilter:selectedDate" 
                     [consultation]="o.consultation" 
                     [patient]="o.patient">
     </consultation>
