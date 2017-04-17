@@ -11,6 +11,7 @@
         padding: 1vw;
         font-size: 2vw;
     }
+    
     span {
         font-size: 1.5vw;        
         color: $tertiary-font-color;
@@ -19,6 +20,16 @@
             color: $accent-color;
         }
     }
+
+    @include break-at(small-to-medium-screens) {
+        p {
+            font-size: 1.5rem;
+        }
+        span {
+            font-size: 1rem;            
+        }
+    }
+
     a {
         cursor: pointer;        
         padding: 1rem;

@@ -36,4 +36,8 @@ section {
 
 consultation {
     margin: 2vw;
+    
+    @include break-at(small-to-medium-screens) {
+        width: 50%
+    }
 }

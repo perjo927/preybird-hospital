@@ -19,6 +19,9 @@
 <section *ngIf="selectedDate" class="consultations">
     <consultation   *ngFor="let o of patientConsultations | dateFilter:selectedDate" 
                     [consultation]="o.consultation" 
-                    [patient]="o.patient">
+                    [doctor]="consultationDetails.doctor"
+                    [patient]="o.patient"
+                    [patientImage]="consultationDetails.patientImage"
+                    (requestDetails)="handleDetails($event)">
     </consultation>
 </section>

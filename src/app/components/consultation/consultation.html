@@ -8,13 +8,16 @@
         <span *ngIf="isExpanded">Close details &laquo;</span>
     </a>
 </section>
+        {{consultationDetails}}
 
-<section *ngIf="isExpanded" class="details" [ngClass]="{'show': isExpanded}">
+<section    *ngIf="isExpanded" 
+            class="details" 
+            [ngClass]="{'show': isExpanded}">
     <div class="modal-content">
         <span (click)="toggleExpand()" class="close">&times;</span>
 
         <h4>{{patient.name}}</h4>
-        <img [src]="patient.imageUrl" />
+        <img [src]="patientImage" />
         <p>
             <b>Condition:</b> {{patient.condition}}
         </p>
@@ -27,21 +30,19 @@
             <b>Consultation date:</b> {{consultation.consultationDate | date: 'yMdjm' }}
         </p>
 
-
         <p>
-            <b>doctor name</b> (consultation.doctorId)
-            <span>doctor roles</span>
-            <img [src]="" />
+            <b>Doctor:</b> {{doctor.name}}
+            <span>{{doctor.roles}}</span>
+            <img [src]="doctor.imageUrl" />
         </p>
-
-
+<!--
         <p>
-            <b>room name</b> (consultation.roomId)
+            <b>Room:</b> (consultation.roomId)
         </p>
         <p>
-            <b>treatment machine name</b>
+            <b>treatment machine name</b> (room.treatmentmachineId)
             <span>machine capability</span>
-        </p>
+        </p>-->
 
     </div>
 
