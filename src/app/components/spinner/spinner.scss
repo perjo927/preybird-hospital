@@ -1,0 +1,20 @@
+@import '../../style/main';
+
+%spinner {
+    margin: 25vh auto;
+
+    border: 0.75rem solid $primary-background-color;     
+    border-top: 1.5rem solid $contrast-color; 
+    border-radius: 50%;
+
+    width: 20vw;
+    height: 20vw;
+
+    animation: spin360 1s linear infinite;
+}
+
+:host {
+    div {
+        @extend %spinner;
+    }
+}

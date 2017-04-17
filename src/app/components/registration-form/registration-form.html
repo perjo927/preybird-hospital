@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    <div>
+        <label for="firstname">First Name</label>
+        <input  type="text" 
+                id="firstname" name="firstname"
+                placeholder="Jane" 
+                required
+                [(ngModel)]="patient.firstName">
+    </div>
+    <div>
+        <label for="lastname">Last Name</label>
+        <input  type="text" 
+                id="lastname"
+                name="lastname"
+                placeholder="Doe"
+                required
+                [(ngModel)]="patient.lastName">
+    </div>
+
+    <div class="image">
+        <label for="image">Image</label>
+        <img [src]="patient.image.url"/>
+        <input  type="button"
+                id="image"
+                name="image"
+                value="Choose image"
+                (click)="chooseImage()">
+    </div>    
+
+    <div class="condition">
+        <label for="condition">Condition</label>
+        <select id="condition"
+                name="condition"
+                required
+                [(ngModel)]="patient.condition">
+            <option *ngFor="let condition of conditions" 
+                    [value]="condition.type">
+                {{condition.text}}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Register</label>
+        <button type="submit" 
+                [disabled]="!registrationForm.form.valid">
+            &#10148;
+        </button>
+    </div>
+</form>

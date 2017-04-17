@@ -1,1 +1,18 @@
-<h1>Hello {{name}}</h1>
+<header>
+    <nav class="logo" (click)="toggleNavBar()">
+        <logo [url]="logo"></logo>
+    </nav>
+    <h1>{{title}}</h1>
+</header>
+
+<navbar [show]="showNavBar" [items]="navBarItems"></navbar>
+
+<main>
+    <section>
+        <router-outlet></router-outlet>        
+    </section>
+</main>
+
+<footer>
+    &copy; Hospitaly Inc. 2017
+</footer>

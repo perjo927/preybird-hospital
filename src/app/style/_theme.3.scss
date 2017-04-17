@@ -1,0 +1,25 @@
+@import "colors";
+@import "fonts";
+
+$primary-background-color:          $white;
+
+$secondary-background-color-dark:   $fiord; 
+$secondary-background-color:        $lynch;
+$secondary-background-color-light:  $geyser;
+
+$primary-font-family:               $roboto;
+$secondary-font-family:             $open-sans;
+$primary-font-color:                $mine-shaft;
+$secondary-font-color:              $white;
+$tertiary-font-color:               $boulder;
+$font-color-disabled:               $fiord;
+
+$divider-color:                     $silver;
+$accent-color:                      $lochmara;
+
+$contrast-color-dark:               $gold-drop;
+$contrast-color:                    $orange-peel;
+$contrast-color-light:              $frangipani;
+
+$alert:                             $persian-red;
+$success:                           $fruit-salad;

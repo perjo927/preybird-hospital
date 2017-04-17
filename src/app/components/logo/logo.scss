@@ -1,0 +1,34 @@
+@import '../../style/main';
+
+:host {
+    &:hover {
+        cursor: pointer;
+
+        img {
+            transform: rotate(45deg);
+            box-shadow: inset 0 0 12px 2px white;
+            animation: spin45 0.3s cubic-bezier(0.68,-0.55,0.27,1.55);
+        }
+    }
+
+    &:active {
+        img {
+            width: 4.9vw;
+            transform: rotate(90deg);
+            box-shadow: inset 0 0 8px 2px white;
+        }
+    }
+
+    img {
+        width: 5vw;
+        border-radius: 50%;
+        animation: spin 1.2s cubic-bezier(0.68,-0.55,0.27,1.55);
+    }
+    
+    span {
+        display: inline-block;
+        font-size: 7vw;
+        font-weight: 900;
+        animation: spin 1.2s cubic-bezier(0.68,-0.55,0.27,1.55);
+    }
+}

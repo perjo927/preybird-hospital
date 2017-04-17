@@ -1,0 +1,29 @@
+<h2>Consultations</h2>
+
+<div class="date-picker">
+    <label for="select-date">Choose an available date</label>
+    <div>
+        <select id="select-date" 
+                name="select-date" 
+                required 
+                [(ngModel)]="selectedDate">
+            <option *ngFor="let date of dates" 
+                    [value]="date">
+                {{date}}
+            </option>
+        </select>
+    </div>
+</div>
+
+<h3>{{selectedDate}}</h3>
+<section *ngIf="selectedDate" class="consultations">
+    <consultation   *ngFor="let o of patientConsultations | dateFilter:selectedDate" 
+                    [consultation]="o.consultation" 
+                    [doctor]="consultationDetails.doctor"
+                    [patient]="o.patient"
+                    [patientImage]="consultationDetails.patientImage"
+                    [machine]="consultationDetails.machine"
+                    [room]="consultationDetails.room"
+                    (requestDetails)="handleDetails($event)">
+    </consultation>
+</section>
