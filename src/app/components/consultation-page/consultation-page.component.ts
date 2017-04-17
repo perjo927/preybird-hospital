@@ -3,7 +3,6 @@ import { ConsultationService } from '../../services/consultation.service';
 import { PatientService } from '../../services/patient.service';
 import { Consultation } from '../../models/consultation.model';
 import { RegisteredPatient } from '../../models/registered-patient.model';
-// import * as moment from 'moment';
 
 @Component({
   selector: 'consultation-page',
@@ -17,8 +16,10 @@ export class ConsultationPageComponent implements OnInit {
   consultations: Array<Consultation>;
   patients: Array<RegisteredPatient>;
   consultationPatientMap: any;
-  datesConsultationMap: any;
+  datesCPMap: any;
   dates: any;
+  expanded: false;
+  selectedDate: string;
 
   constructor(
     private consultationService: ConsultationService,
@@ -32,32 +33,37 @@ export class ConsultationPageComponent implements OnInit {
   }
 
   async init() {
+    // Get data from API
     this.consultations = await this.getConsultations();
     this.patients = await this.getPatients();
 
+    // Sort by date
     this.consultations.sort((a: any, b: any): any => {
       return a.consultationDate > b.consultationDate;
     });
 
-    this.datesConsultationMap = {};
-    for (let c of this.consultations) {
-      let d = c.consultationDate.slice(0, 10);
-
-      if (!this.datesConsultationMap[d]) {
-        this.datesConsultationMap[d] = [];
-      } else {
-        this.datesConsultationMap[d].push(c);
-      }
-    }
-    this.dates = Object.keys(this.datesConsultationMap)
-
-
+    // Map consultations with patients
     this.consultationPatientMap = this.consultations.map((element) => {
       return {
         consultation: element,
         patient: this.getPatient(element.patientId)
       };
     });
+
+    // Map dates and consultations/patients
+    this.datesCPMap = {};
+    for (let cp of this.consultationPatientMap) {
+      const c = cp.consultation;
+      const d: string = new Date(c.consultationDate).toLocaleDateString();
+
+      if (!this.datesCPMap[d]) {
+        this.datesCPMap[d] = [];
+      }
+      this.datesCPMap[d].push(c);
+
+    }
+    this.dates = Object.keys(this.datesCPMap)
+    console.log(this.datesCPMap)
 
   }
 

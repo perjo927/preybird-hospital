@@ -1,5 +1,21 @@
-<div>
-    <p> {{consultation.consultationDate | date }}</p>
-    <p> {{patient.name}}</p>
-</div>
-<br>
+<section class="title">
+    <p>
+        <b>{{patient.name}}</b> @ {{consultation.consultationDate | date: 'd:j' }}
+    </p>
+    <a (click)="isExpanded=!isExpanded">Expand</a>
+</section>
+
+<section *ngIf="isExpanded" class="details hidden">
+    <p>{{patient.imageUrl}}</p>
+    <p>{{patient.condition}}</p>
+
+    <p>doctor name (consultation.doctorId)</p>
+    <span>doctor roles</span>
+    <span>doctor image</span>
+
+    <p>room name (consultation.roomId)</p>
+    <p>treatment machine name</p> machine capability, registration date
+    <p>
+        <b>Date</b> {{consultation.consultationDate | date: 'yMdjm' }}
+    </p>
+</section>

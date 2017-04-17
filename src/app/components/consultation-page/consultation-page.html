@@ -1,8 +1,32 @@
 <h2>Consultations</h2>
-Pick an available date
-<div *ngFor="let date of dates"> {{date}}  </div>
-<consultation 
-    *ngFor="let o of consultationPatientMap"
-    [consultation]="o.consultation"
-    [patient]="o.patient">
-</consultation>
+
+<div class="date-picker">
+    <label for="select-date">Choose an available date</label>
+    <div>
+        <select id="select-date" 
+                name="select-date" 
+                required 
+                [(ngModel)]="selectedDate">
+            <option *ngFor="let date of dates" 
+                    [value]="date">
+                {{date}}
+            </option>
+        </select>
+    </div>
+</div>
+
+<h3>{{selectedDate}}</h3>
+<section *ngIf="selectedDate && !expanded" class="consultations">
+    <consultation   *ngFor="let o of consultationPatientMap | dateFilter:selectedDate" 
+                    [consultation]="o.consultation" 
+                    [patient]="o.patient">
+    </consultation>
+</section>
+
+<section *ngIf="expanded">
+     <!--<consultation
+            [consultation]="consultation" 
+            [patient]="patient">
+    </consultation>-->
+    {{datesCPMap[selectedDate]}}
+</section>

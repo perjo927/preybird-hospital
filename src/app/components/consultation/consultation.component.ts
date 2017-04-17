@@ -13,4 +13,5 @@ export class ConsultationComponent {
     @Input() consultation: Consultation;
     @Input() patient: RegisteredPatient;
 
+    isExpanded: boolean = false;
 }
