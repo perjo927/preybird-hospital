@@ -1,15 +1,19 @@
 import { browser, element, by } from 'protractor';
 
-describe('QuickStart E2E Tests', function () {
+describe('As a consumer of Hospitality Inc. I want to know that I am visiting the right web site', function () {
+  const expectedMsg = 'Hospitality Inc.';
 
-  let expectedMsg = 'Hello Angular';
+  describe('Given that I browse the home route', () => {
 
-  beforeEach(function () {
-    browser.get('');
+    beforeEach(() => {
+      browser.get('');
+    });
+
+    describe('When I look at the title', () => {
+
+      it('Then it must display: ' + expectedMsg, () => {
+        expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
+      });
+    });
   });
-
-  it('should display: ' + expectedMsg, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
-  });
-
 });
