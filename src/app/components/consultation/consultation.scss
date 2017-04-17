@@ -11,7 +11,7 @@
         padding: 1vw;
         font-size: 2vw;
     }
-    
+
     span {
         font-size: 1.5vw;        
         color: $tertiary-font-color;
@@ -80,7 +80,8 @@ h4 {
     }
 }
 
-.modal-content {
+article {
+
     margin: auto;
     padding: 2vw;
     width: 80vw;
@@ -93,11 +94,27 @@ h4 {
     }
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    margin: 4.5vw;
+
+    @include break-at(small-to-medium-screens) {
+        width: 40%;
+    }
+}    
+
 .close {
-    color: $tertiary-font-color;
     float: right;
     font-size: 3rem;
     font-weight: bold;
+    color: $tertiary-font-color;    
 }
 
 .close:hover,
@@ -105,4 +122,10 @@ h4 {
     color: $primary-font-color;
     text-decoration: none;
     cursor: pointer;
+}
+
+img {
+    width: 15vw;
+    height: 15vw;    
+    border-radius: 50%;
 }

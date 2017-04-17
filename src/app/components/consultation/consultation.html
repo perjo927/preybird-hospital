@@ -8,44 +8,48 @@
         <span *ngIf="isExpanded">Close details &laquo;</span>
     </a>
 </section>
-        {{consultationDetails}}
+{{consultationDetails}}
 
-<section    *ngIf="isExpanded" 
-            class="details" 
-            [ngClass]="{'show': isExpanded}">
-    <div class="modal-content">
+<section *ngIf="isExpanded" class="details" [ngClass]="{'show': isExpanded}">
+    <article>
         <span (click)="toggleExpand()" class="close">&times;</span>
+        <div class="container">
+            <div class="col">
+                <h4>{{patient.name}}</h4>
+                <img [src]="patientImage" />
+            </div>
 
-        <h4>{{patient.name}}</h4>
-        <img [src]="patientImage" />
-        <p>
-            <b>Condition:</b> {{patient.condition}}
-        </p>
+            <div class="col">
+                <p>
+                    <b>Condition:</b> {{getCondition(patient.condition)}}
+                </p>
+                <p>
+                    <b>Registration date:</b> {{consultation.registrationDate | date: 'yMdjm' }}
+                </p>
+                <p>
+                    <b>Consultation date:</b> {{consultation.consultationDate | date: 'yMdjm' }}
+                </p>
+            </div>
 
-        <p>
-            <b>Registration date:</b> {{consultation.registrationDate | date: 'yMdjm' }}
-        </p>
+            <div class="col">
+                <p>
+                    <b>Doctor:</b> {{doctor.name}}
+                </p>
+                <img [src]="doctor.imageUrl" />
+                <p><i>{{doctor.roles}}</i></p>
+            </div>
 
-        <p>
-            <b>Consultation date:</b> {{consultation.consultationDate | date: 'yMdjm' }}
-        </p>
-
-        <p>
-            <b>Doctor:</b> {{doctor.name}}
-            <span>{{doctor.roles}}</span>
-            <img [src]="doctor.imageUrl" />
-        </p>
-<!--
-        <p>
-            <b>Room:</b> (consultation.roomId)
-        </p>
-        <p>
-            <b>treatment machine name</b> (room.treatmentmachineId)
-            <span>machine capability</span>
-        </p>-->
-
-    </div>
-
+            <div class="col">
+                <p>
+                    <b>Room:</b> {{room.name}}
+                </p>
+                <p>
+                    <b>Machine: </b> {{machine.name}}
+                    <span>{{machine.capability}}</span>
+                </p>
+            </div>
+        </div>
+    </article>
 </section>
 
 <section *ngIf="isExpanded">

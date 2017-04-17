@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChange } from '@angular/core';
 import { Consultation } from '../../models/consultation.model';
 import { RegisteredPatient } from '../../models/registered-patient.model';
+import { conditions } from '../../data/condition.data';
 
 @Component({
     selector: 'consultation',
@@ -15,26 +16,19 @@ export class ConsultationComponent implements OnChanges {
     @Input() patient: RegisteredPatient;
     @Input() patientImage: any;
     @Input() room: any;
+    @Input() machine: any;
 
     @Output() requestDetails = new EventEmitter<any>();
 
+    conditions = conditions;
     isExpanded: boolean = false;
 
-    changeLog: string[] = [];
     ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
-        let log: string[] = [];
-        for (let propName in changes) {
-            let changedProp = changes[propName];
-            let to = JSON.stringify(changedProp.currentValue);
-            if (changedProp.isFirstChange()) {
-                log.push(`Initial value of ${propName} set to ${to}`);
-            } else {
-                let from = JSON.stringify(changedProp.previousValue);
-                log.push(`${propName} changed from ${from} to ${to}`);
-            }
-        }
-        this.changeLog.push(log.join(', '));
-        console.log(this.changeLog)
+    }
+
+    getCondition(key: string): string {
+        const condition = conditions.find(element => element.type === key);
+        return condition.text;
     }
 
     toggleExpand(): void {

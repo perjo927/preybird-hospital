@@ -55,30 +55,32 @@ export class ConsultationPageComponent implements OnInit {
   }
 
   async setDetails(consultation: Consultation, patient: RegisteredPatient) {
-    const imageUrl = await this.getImage(patient.imageId);
-    if (imageUrl) {
-      this.consultationDetails.patientImage = imageUrl;
-    }
+    this.getImage(patient.imageId).then((imageUrl) => {
+      if (imageUrl) {
+        this.consultationDetails.patientImage = imageUrl;
+      }
+    });
+
     const doctor = await this.getDoctor(consultation.doctorId)
     if (doctor) {
-      const doctorImageUrl = await this.getImage(doctor.imageId);
-      console.log(doctorImageUrl)
-      if (doctorImageUrl) {
-        doctor.imageUrl = doctorImageUrl;
-      }
-      this.consultationDetails.doctor = doctor;
+      this.getImage(doctor.imageId).then((doctorImageUrl) => {
+        if (doctorImageUrl) {
+          doctor.imageUrl = doctorImageUrl;
+        }
+        this.consultationDetails.doctor = doctor;
+      });
     }
-    // ,
-    // room: this.getRoom(element.roomId)
-    // ,
-    // machine: this.getMachine(room.treatmentMachineId)
-    // console.log(url, this.consultationDetails)    
 
+    const room = await this.getRoom(consultation.roomId)
+    this.consultationDetails.room = room;
+
+    this.getMachine(room.treatmentMachineId).then((machine) => {
+      this.consultationDetails.machine = machine;
+    });
   }
 
   handleDetails(event: any): void {
     this.setDetails(event.consultation, event.patient);
-    // this.consultationDetails = {};
   }
 
   getPatient(id: string): RegisteredPatient {
@@ -99,8 +101,17 @@ export class ConsultationPageComponent implements OnInit {
   private async getDoctor(id: string): Promise<any> {
     try {
       const doctor = await this.doctorService.get<any>(id);
-      console.log(doctor);
       return doctor;
+    } catch (err) {
+      console.error(`${err.status} ${err.statusText}`);
+    }
+    return null;
+  }
+
+  private async getMachine(machineId: any): Promise<any> {
+    try {
+      const machine = await this.machineService.get<any>(machineId);
+      return machine;
     } catch (err) {
       console.error(`${err.status} ${err.statusText}`);
     }
@@ -120,8 +131,17 @@ export class ConsultationPageComponent implements OnInit {
   private async getImage(id: string): Promise<string> {
     try {
       const image: PatientImage = await this.imageService.get<PatientImage>(id);
-      console.log(image.url);
       return image.url;
+    } catch (err) {
+      console.error(`${err.status} ${err.statusText}`);
+    }
+    return null;
+  }
+
+  private async getRoom(id: string): Promise<any> {
+    try {
+      const room = await this.roomService.get<any>(id);
+      return room;
     } catch (err) {
       console.error(`${err.status} ${err.statusText}`);
     }
