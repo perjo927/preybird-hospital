@@ -48,9 +48,9 @@ Shut it down manually with `Ctrl-C`.
 
 
 ### Unit Tests
-TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec.ts`.
+TypeScript unit-tests are found in the `src/app` folder. Their filenames end in `.spec.ts`.
 
-Run it with `npm test`
+Run them with `npm test`.
 
 That command first compiles the application, then simultaneously re-compiles and runs the karma test-runner.
 Both the compiler and the karma watch for (different) file changes.
