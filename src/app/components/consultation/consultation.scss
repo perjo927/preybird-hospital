@@ -1,3 +1,97 @@
+@import '../../app.scss';
+
 .title {
-    
+
+    &:hover {
+        background: $contrast-color-light;
+    }
+
+    p {
+        margin-top: 0;
+        padding: 1vw;
+        font-size: 2vw;
+    }
+    span {
+        font-size: 1.5vw;        
+        color: $tertiary-font-color;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+    a {
+        cursor: pointer;        
+        padding: 1rem;
+    }
+}
+
+:host {     
+    box-shadow: 0px 1px 5px -1px grey;
+    border-radius: 5px;
+    padding: 1rem;
+
+    &:hover {                
+        background: $contrast-color;    
+        box-shadow: 0px 2px 7px 0px grey;
+    }
+}
+
+section {
+    background: white; // $secondary-background-color-light;
+    box-shadow: inset 0px 1px 5px -1px black;
+
+    p {
+        padding: 1vw;
+        font-size: 1.5vw;
+    }
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.details {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 10vh; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-radius: 5px;    
+    background-color: rgba(0,0,0,0.5); 
+
+    &.show {
+        display: block;
+    }
+}
+
+.modal-content {
+    margin: auto;
+    padding: 2vw;
+    width: 80vw;
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 5px black;
+    background-color: $primary-background-color;
+
+    p {
+        padding: 0;
+    }
+}
+
+.close {
+    color: $tertiary-font-color;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: $primary-font-color;
+    text-decoration: none;
+    cursor: pointer;
 }

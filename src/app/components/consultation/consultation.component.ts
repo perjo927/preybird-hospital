@@ -12,6 +12,11 @@ export class ConsultationComponent {
 
     @Input() consultation: Consultation;
     @Input() patient: RegisteredPatient;
+    // @Input() details?: any;
 
     isExpanded: boolean = false;
+
+    toggleExpand(): void {
+        this.isExpanded = !this.isExpanded;
+    }
 }

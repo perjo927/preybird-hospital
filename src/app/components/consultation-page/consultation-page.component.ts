@@ -25,23 +25,21 @@ export class ConsultationPageComponent implements OnInit {
     private consultationService: ConsultationService,
     private patientService: PatientService,
   ) {
-    this.init();
   }
 
   ngOnInit(): void {
-    // this.init();
+    this.fetchData().then(() => {
+      this.consultations = this.sortConsultations(this.consultations);
+      this.patientConsultations = this.mapConsultations(this.consultations);
+      this.datesMap = this.mapDates(this.datesMap);
+      this.dates = Object.keys(this.datesMap);
+    });
   }
 
-  async init() {
-    // Get data from API
+  async fetchData() {
     this.consultations = await this.getConsultations();
     this.patients = await this.getPatients();
 
-    // Massage
-    this.consultations = this.sortConsultations(this.consultations);
-    this.patientConsultations = this.mapConsultations(this.consultations);
-    this.datesMap = this.mapDates(this.datesMap);
-    this.dates = Object.keys(this.datesMap);
   }
 
   getPatient(id: string): RegisteredPatient {

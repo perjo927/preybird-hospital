@@ -1,21 +1,52 @@
 <section class="title">
     <p>
-        <b>{{patient.name}}</b> @ {{consultation.consultationDate | date: 'd:j' }}
+        <b>{{patient.name}}</b>
+        <span>@ {{consultation.consultationDate | date: 'd:j' }}</span>
     </p>
-    <a (click)="isExpanded=!isExpanded">Expand</a>
+    <a (click)="toggleExpand()">
+        <span *ngIf="!isExpanded">View details &raquo;</span>
+        <span *ngIf="isExpanded">Close details &laquo;</span>
+    </a>
 </section>
 
-<section *ngIf="isExpanded" class="details hidden">
-    <p>{{patient.imageUrl}}</p>
-    <p>{{patient.condition}}</p>
+<section *ngIf="isExpanded" class="details" [ngClass]="{'show': isExpanded}">
+    <div class="modal-content">
+        <span (click)="toggleExpand()" class="close">&times;</span>
 
-    <p>doctor name (consultation.doctorId)</p>
-    <span>doctor roles</span>
-    <span>doctor image</span>
+        <h4>{{patient.name}}</h4>
+        <img [src]="patient.imageUrl" />
+        <p>
+            <b>Condition:</b> {{patient.condition}}
+        </p>
 
-    <p>room name (consultation.roomId)</p>
-    <p>treatment machine name</p> machine capability, registration date
-    <p>
-        <b>Date</b> {{consultation.consultationDate | date: 'yMdjm' }}
-    </p>
+        <p>
+            <b>Registration date:</b> {{consultation.registrationDate | date: 'yMdjm' }}
+        </p>
+
+        <p>
+            <b>Consultation date:</b> {{consultation.consultationDate | date: 'yMdjm' }}
+        </p>
+
+
+        <p>
+            <b>doctor name</b> (consultation.doctorId)
+            <span>doctor roles</span>
+            <img [src]="" />
+        </p>
+
+
+        <p>
+            <b>room name</b> (consultation.roomId)
+        </p>
+        <p>
+            <b>treatment machine name</b>
+            <span>machine capability</span>
+        </p>
+
+    </div>
+
+</section>
+
+<section *ngIf="isExpanded">
+
 </section>
