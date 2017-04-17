@@ -1,7 +1,7 @@
 {
   "name": "preybird-hospitality",
   "license": "PER",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An app with hospitality",
   "scripts": {
     "build:ts": "tsc -p src/",
